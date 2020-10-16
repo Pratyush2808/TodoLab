@@ -1,0 +1,54 @@
+<div>
+        <mat-toolbar color="primary">
+            <span>Todo App</span>
+        </mat-toolbar>
+    <div>
+        <form>
+            <div class="input">
+                <div class="title">
+                    <p>Enter Title:</p>
+                    <input [(ngModel)]="title" placeholder="Add title here" name="title">
+                </div> 
+                <div class="description">
+                    <p>Enter Title:</p>
+                    <input [(ngModel)]="description" placeholder="Add description here" name="description">
+                </div>
+                <div class="date">
+                    <p>Enter Title:</p>
+                    <input [(ngModel)]="item_date" placeholder="Add date here" name="item_date">
+                </div>
+                <button type="submit" *nfIf="title !== ''" (click)="addItem($event)">Add Task</button>
+            </div>
+            
+        </form>
+    </div>
+    
+    <!--Displaying the todo list-->
+    
+    <ul>
+        <li *ngFor="let todo of todoList; let i=index">
+            <mat-card>
+                <app-list [title]='todo.title'></app-list>
+                <mat-card-subtitle><strong>Details</strong></mat-card-subtitle>
+                <mat-card-content>
+                    <table class="todo-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                            </tr>
+                            <tr>
+                                <td>{{todo.i+1}}</td>
+                                <td>{{todo.title}}</td>
+                                <td>{{todo.description}}</td>
+                                <td>{{todo.date}}</td>
+                            </tr>
+                        </thead>
+                </mat-card-content>   
+            </mat-card>
+        </li>
+    </ul>      
+    
+    
