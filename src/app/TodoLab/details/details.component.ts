@@ -12,7 +12,6 @@ export class DetailsComponent implements OnInit {
   todoList:any;
   todoObject:any;
 
-
   constructor() {
     this.title='';
     this.description='';
