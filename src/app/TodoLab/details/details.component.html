@@ -17,9 +17,8 @@
                     <p>Enter Title:</p>
                     <input [(ngModel)]="item_date" placeholder="Add date here" name="item_date">
                 </div>
-                <button type="submit" *nfIf="title !== ''" (click)="addItem($event)">Add Task</button>
-            </div>
-            
+                <button type="submit" *ngIf="title !== ''" (click)="addItem($event)">Add Task</button>
+            </div>    
         </form>
     </div>
     
@@ -46,9 +45,10 @@
                                 <td>{{todo.date}}</td>
                             </tr>
                         </thead>
+                    </table>
                 </mat-card-content>   
             </mat-card>
         </li>
-    </ul>      
-    
-    
+    </ul>
+</div>      
+
